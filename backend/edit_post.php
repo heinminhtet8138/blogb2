@@ -23,7 +23,7 @@ error_reporting(E_ALL);
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
-    $id = $_POST['id'];
+    $upd_id = $_POST['id'];
     $title = $_POST['title'];
     $category_id = $_POST['category_id'];
     $user_id = 2;
@@ -49,7 +49,7 @@ error_reporting(E_ALL);
     // $sql = "INSERT INTO posts (title,category_id,user_id,photo,description) VALUES(:title, :category, :user, :photo, :description)";
     $sql = "UPDATE posts SET title=:title, category_id=:category,user_id=:user,photo=:photo,description=:description WHERE id=:id";
     $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id',$id);
+    $stmt->bindParam(':id',$upd_id);
     $stmt->bindParam(':title',$title);
     $stmt->bindParam(':category',$category_id);
     $stmt->bindParam(':user',$user_id);

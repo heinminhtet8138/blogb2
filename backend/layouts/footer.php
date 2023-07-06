@@ -21,6 +21,7 @@
         <script src="js/datatables-simple-demo.js"></script>
 
         <script>
+            // for summer note
             $('#description').summernote({
                 placeholder: 'Hello stand alone ui',
                 tabsize: 2,
@@ -34,6 +35,17 @@
                 ['insert', ['link', 'picture', 'video']],
                 ['view', ['fullscreen', 'codeview', 'help']]
                 ]
+            });
+
+            //for delete
+            $(document).ready(function () {
+                
+                $('tbody').on('click','.delete',function(){
+                    let id = $(this).data('id');
+                    // console.log(id);
+                    $('#del_id').val(id);
+                    $('#deleteModel').modal('show');
+                })
             });
     </script>
     </body>
