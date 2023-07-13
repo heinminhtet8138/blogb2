@@ -1,6 +1,10 @@
 
 <?php 
-    include "layouts/nav_sidebar.php";
+session_start();
+if(isset($_SESSION['user_id'])){
+
+        include "layouts/nav_sidebar.php";
+
 ?>
                 <main>
                     <div class="container-fluid px-4">
@@ -559,7 +563,13 @@
 
 <?php 
 
+   
+
     include "layouts/footer.php";
+
+}else {
+        header("location:login.php");
+}
 
 ?>
                 

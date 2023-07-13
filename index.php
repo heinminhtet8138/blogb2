@@ -24,9 +24,6 @@ error_reporting(E_ALL);
         $stmt->execute();
         $posts = $stmt->fetchAll();
     }
-
-   
-
     
 
     // var_dump($posts);

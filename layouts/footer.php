@@ -29,7 +29,7 @@
                                         <?php 
                                             foreach($categories as $category){
                                         ?>
-                                        <li><a href="#!"><?= $category['name'] ?></a></li>
+                                        <li><a href="index.php?cid=<?= $category['id'] ?>"><?= $category['name'] ?></a></li>
                                         <?php 
                                             }
                                         ?>

@@ -3,6 +3,9 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+if(isset($_SESSION['user_id'])){
+
     include "../dbconnect.php";
 
     $sql = "SELECT * FROM categories";
@@ -26,7 +29,7 @@ error_reporting(E_ALL);
     $upd_id = $_POST['id'];
     $title = $_POST['title'];
     $category_id = $_POST['category_id'];
-    $user_id = 2;
+    $user_id = $_SESSION['user_id'];
     $description = $_POST['description'];
     $photo_arr = $_FILES['new_photo'];
     $old_photo = $_POST['photo'];
@@ -135,6 +138,9 @@ error_reporting(E_ALL);
 
     include "layouts/footer.php";
 
+}
+}else {
+    header("location:login.php");
 }
 
 ?>
